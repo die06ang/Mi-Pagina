@@ -1,0 +1,119 @@
+﻿@page "/counter"
+
+
+<PageTitle>Counter</PageTitle>
+
+<style>
+    iframe {
+        width: 75vh;
+        /* para hacerlo responsive */
+        height: 60vh;
+    }
+</style>
+
+<h1>Certificados</h1>
+
+<div class="alert alert-info" role="alert">
+    Aquí puedes ver los certificados que he obtenido en diferentes cursos.
+    Puedes hacer clic en los enlaces para ver los certificados.
+</div>
+
+<iframe id="contenedor" src="" width="600" height="400" style="border:1px solid #ccc;"></iframe>
+
+<div class="categoria">
+    <h2>SQL_PLSQL</h2>
+
+    <ul>
+        <li><a href="#" data-url="/Certificados/SQL_PLSQL/diploma-dbsql.pdf" class="carga-iframe">Curso de BBDD
+                con SQL - Platzi</a></li>
+
+        <li><a href="#" data-url="/Certificados/SQL_PLSQL/diploma-practico-sql.pdf" class="carga-iframe">Curso
+                práctico de SQL - Platzi</a></li>
+
+        <li><a href="#" data-url="/Certificados/SQL_PLSQL/diploma-postgresql.pdf" class="carga-iframe">Curso de
+                PostgreSQL - Platzi</a></li>
+
+        <li><a href="#" data-url="/Certificados/SQL_PLSQL/diploma-postgresql-datos.pdf" class="carga-iframe">Curso de
+                PostgreSQL aplicado a cincia de datos - Platzi</a></li>
+    </ul>
+</div>
+
+<div class="categoria">
+    <h2>PHP</h2>
+
+    <ul>
+        <li><a href="#" data-url="/Certificados/PHP/diploma-php.pdf" class="carga-iframe">Curso Básico de PHP:
+                Instalación, Fundamentos y Operadores - Platzi</a></li>
+
+        <li><a href="#" data-url="/Certificados/PHP/diploma-php-arreglos-funciones.pdf" class="carga-iframe">Curso
+                Básico de PHP: Arreglos, Funciones y Estructuras de Control -
+                Platzi</a></li>
+
+        <li><a href="#" data-url="/Certificados/PHP/diploma-php-entornos-funciones.pdf" class="carga-iframe">Curso
+                Intermedio de PHP: Entornos Virtuales y Profundización -
+                Platzi</a></li>
+
+        <li><a href="#"
+                data-url="/Certificados/PHP/certificate-learn-object-oriented-php-by-building-a-complete-website.pdf"
+                class="carga-iframe">Curso de OOP y Acceso a Datos con PHP - Eduonix</a></li>
+    </ul>
+</div>
+
+<div class="categoria">
+    <h2>C# y .NET</h2>
+
+    <ul>
+        <li><a href="#" data-url="/Certificados/CSharp_.NET/diploma-desarrollo-c-sharp-net.pdf"
+                class="carga-iframe">Ruta de Cursos de Desarrollo con C# y .NET - Platzi</a></li>
+
+        <li><a href="#" data-url="/Certificados/CSharp_.NET/diploma-csharp.pdf" class="carga-iframe">Curso
+                Básico de C#: Fundamentos, Variables y Operadores - Platzi</a></li>
+
+        <li><a href="#" data-url="/Certificados/CSharp_.NET/diploma-fundamentos-net.pdf" class="carga-iframe">Curso de
+                Fundamentos de .NET - Platzi</a></li>
+
+        <li><a href="#" data-url="/Certificados/CSharp_.NET/diploma-c-sharp-poo.pdf" class="carga-iframe">Curso
+                de Programación Orientada a Objetos con C# - Platzi</a></li>
+
+        <li><a href="#" data-url="/Certificados/CSharp_.NET/diploma-linq.pdf" class="carga-iframe">Curso de C#:
+                Manejo de Datos con LINQ - Platzi</a></li>
+
+        <li><a href="#" data-url="/Certificados/CSharp_.NET/diploma-solid-csharp-net.pdf" class="carga-iframe">Curso de
+                Principios SOLID en C# y .NET - Platzi</a></li>
+
+        <li><a href="#" data-url="/Certificados/CSharp_.NET/diploma-clean-code-csharp.pdf" class="carga-iframe">Curso de
+                Buenas Prácticas y Código Limpio en C# - Platzi</a></li>
+
+        <li><a href="#" data-url="/Certificados/CSharp_.NET/diploma-entity-framework.pdf" class="carga-iframe">Curso de
+                Fundamento de Entity Framework - Platzi</a></li>
+
+        <li><a href="#" data-url="/Certificados/CSharp_.NET/diploma-apis-net.pdf" class="carga-iframe">Curso de
+                APIs con .NET - Platzi</a></li>
+
+        <li><a href="#" data-url="/Certificados/CSharp_.NET/diploma-blazor-webassembly.pdf" class="carga-iframe">Curso
+                de Aplicaciones Web con Blazor WebAssembly y .NET -
+                Platzi</a></li>
+    </ul>
+</div>
+
+<script>
+    // Seleccionamos todos los enlaces que tienen clase carga-iframe
+    document.querySelectorAll('.carga-iframe').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            // Obtenemos la URL desde data-url
+            var url = this.getAttribute('data-url');
+            // Cambiamos el src del iframe
+            document.getElementById('contenedor').src = url;
+        });
+    });
+</script>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
